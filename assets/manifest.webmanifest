@@ -1,6 +1,6 @@
 {
-  "name": "MEMO-APP",
-  "short_name": "MEMO",
+  "name": "MY-CLOCK",
+  "short_name": "My Clock",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
