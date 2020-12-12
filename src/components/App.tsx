@@ -20,23 +20,23 @@ const GrobalStyles = createGlobalStyle`
 `;
 
 const Main = styled.div`
-  height: calc(100vh - 70px);
-  padding-top: 30px;
-  background: #f5f5f5;
-  padding-top: 70px;
+  height: calc(100vh - 124px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 16px;
 
   ul {
     width: 100%;
+    display: flex;
+    flex-flow: wrap row;
   }
 
   .reset {
     height: 40px;
     width: 50%;
-    margin: 40px auto 0;
-    background: #0272bb;
+    margin: 24px auto 0;
+    background: #611FFF;
     color: #fff;
     border: 1px solid #f5f5f5;
     border-radius: 7px;
@@ -58,7 +58,7 @@ const App = () => {
           ))}
         </ul>
         <button className="reset" onClick={() => window.localStorage.clear()}>
-          すべてをリセット
+          リセット
         </button>
       </Main>
     </div>

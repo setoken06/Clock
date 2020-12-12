@@ -4,43 +4,54 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { Data } from "../lib/types";
 
 const Wrapper = styled.li`
-  height: 80px;
-  width: 80vw;
-  margin: 15px auto 0;
-  padding: 0 5%;
+  width: calc((100% - 16px) / 2);
   background: #fff;
   border-radius: 10px;
-  color: #333;
+  color: #1A171E;
   display: flex;
-  align-items: center;
+  flex-flow: nowrap column;
+  align-items: flex-start;
+  box-shadow: 0px 8px 8px rgba(0,0,0,0.12);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+
+  :nth-child(odd) {
+    margin-right: 16px;
+  }
 
   .label {
     font-size: 0.8rem;
-    margin-right: 5px;
     font-weight: bold;
     letter-spacing: 1.5px;
+    margin-bottom: 0.2rem;
   }
 
   .time {
-    padding-right: 5%;
-    font-size: 2rem;
+    font-size: 1.6rem;
     flex-grow: 1;
     text-align: right;
     letter-spacing: 2px;
+    margin-bottom: 0.5rem;
   }
 
-  button {
+  .button_area {
+    width: 100%;
+    text-align: right;
+
+    button {
     height: 60px;
     width: 60px;
-    border: 1px solid #f5f5f5;
     border-radius: 30px;
-    background: #8ec3fc;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background: #611FFF;
+    border: 1px solid #611FFF;
+    box-shadow: 0px 0px 16px rgba(0,0,0,0.12);
 
     .icon {
       color: #fff;
       font-size: 1.5rem;
     }
+  }
   }
 `;
 
@@ -53,11 +64,13 @@ const Item: React.FC<Props> = ({ data }) => {
     <Wrapper>
       <p className="label">{data.text}</p>
       <p className="time">{data.time}</p>
-      <button
-        onClick={() => window.localStorage.setItem(data.type, `${Date.now()}`)}
-      >
-        <Icon className="icon" icon={data.icon} />
-      </button>
+      <div className="button_area">
+        <button
+          onClick={() => window.localStorage.setItem(data.type, `${Date.now()}`)}
+        >
+          <Icon className="icon" icon={data.icon} />
+        </button>
+      </div>
     </Wrapper>
   );
 };

@@ -3,25 +3,16 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 70px;
-  background: linear-gradient(-45deg, #8ec3fc, #b1ccfc);
-  position: fixed;
-  
-  p {
-    margin-left: 1.5rem;
-    color: #fff;
-    font-family: Linotte, YuGothic, "Yu Gothic", 游ゴシック体, 游ゴシック, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Roboto, メイリオ, Meiryo, "ＭＳ Ｐゴシック", Osaka, "MS PGothic", Arial, Helvetica, Verdana, sans-serif !important;
-    line-height: 70px;
-    font-size: 24px;
-    letter-spacing: 6px;
-  }
-}
+  /* background: linear-gradient(-45deg, #8ec3fc, #b1ccfc); */
+   img {
+    padding: 8px 16px;
+   }
 `;
 
 const Header: React.FC = () => {
   return (
     <Wrapper>
-      <p>MyClock</p>
+      <img src={"images/logo.png"} height={"48px"} width={"48px"} />
     </Wrapper>
   );
 };
